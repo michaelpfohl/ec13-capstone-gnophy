@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+# Gnophy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Motivation
+Named for the ancient Greek “Gnosis” (personal knowledge) and “Physis” (nature), Gnophy is an app built to encourage kids to learn about the nature around them via experience. The user can add Outings on which they will catalogue Sightings of the flora, fauna, and fungi that they encounter. From there, the user can input information about their own personal experience with what they encountered. Users can view all Sightings on a particular Outing or all Sightings as whole, as well as filter Sightings by type (flora, fauna, fungi). While adding Sightings, users will level up and unlock achievements as a way to motivate a continued journey of discovery.
 
-## Available Scripts
+The idea for this app came to me while I was out on one of my own daily walks admiring the nature in my neighborhood I thought about how little I knew about the specific pieces of nature I was admiring and about my own love of creating my own etymological and mythological systems as a child. Gnophy will allow the user to tailor their use of the app to learn more about nature or to build their own worlds by ascribing their own meaning to that which they encounter, strengthening the link between learning and imagination.
 
-In the project directory, you can run:
+I am excited about the prospect of building this app because it will allow me to experiment in a user experience space with which I am unfamiliar, that of designing with children in mind. I also look forward to exploring the use of gamification to promote positive habits as I myself have seen the positive effects that such design tactics can have through my own use of two apps which lean heavily on the concept, Duolingo (learning new languages) and Noom (managing calorie consumption).
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Planning
+- [Figma](https://www.figma.com/file/hWzcLhr02oMvVBbYAX6rwH/GNOPHY?node-id=0%3A1)
+- ERD (TBD)
+- Issue Tickets (TBD)
+- Data (TBD)
