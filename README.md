@@ -11,10 +11,27 @@ I am excited about the prospect of building this app because it will allow me to
 - [Figma](https://www.figma.com/file/hWzcLhr02oMvVBbYAX6rwH/GNOPHY?node-id=0%3A1)
 - [LucidChart ERD](https://lucid.app/lucidchart/invitations/accept/1b3b35d2-821b-4843-9f39-c1be7ed772eb)
 - Issue Tickets (TBD)
-- Data (TBD)
-
-## ERD
-![LucidChart](lucidchartERD.png)
+- [Mock Data generated with Mockaroo](https://www.mockaroo.com/466f9bc0)
 
 ## Wireframe
 ![Figma](figmaWireframe.png)
+## ERD
+![LucidChart](lucidchartERD.png)
+
+## Example Data
+```
+Sighting
+
+"-MMxTRQql-IivX_TYljn":
+  {
+    "id":"-MI7-6yd-fBLLhUfy7E3",
+    "name":"Eastern indigo snake",
+    "location":"Kilifi",
+    "biome":"Swamp",
+    "type":"Fauna",
+    "notes":"Drymarchon corias couperi",
+    "image":"http://dummyimage.com/300x300.bmp/5fa2dd/ffffff","userId":"-MI7-943U4tiUDQ9oqyr"
+  },
+```
+
+
