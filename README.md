@@ -19,7 +19,7 @@ I am excited about the prospect of building this app because it will allow me to
 ![LucidChart](lucidchartERD.png)
 
 ## Example Data
-```
+```json
 Sighting
 
 "-MMxTRQql-IivX_TYljn":
