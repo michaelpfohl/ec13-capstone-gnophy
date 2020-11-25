@@ -30,7 +30,8 @@ Sighting
     "biome":"Swamp",
     "type":"Fauna",
     "notes":"Drymarchon corias couperi",
-    "image":"http://dummyimage.com/300x300.bmp/5fa2dd/ffffff","userId":"-MI7-943U4tiUDQ9oqyr"
+    "image":"http://dummyimage.com/300x300.bmp/5fa2dd/ffffff",
+    "userId":"-MI7-943U4tiUDQ9oqyr",
   },
 ```
 
