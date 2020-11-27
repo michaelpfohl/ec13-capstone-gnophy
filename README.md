@@ -10,7 +10,7 @@ I am excited about the prospect of building this app because it will allow me to
 ## Planning
 - [Figma](https://www.figma.com/file/hWzcLhr02oMvVBbYAX6rwH/GNOPHY?node-id=0%3A1)
 - [LucidChart ERD](https://lucid.app/lucidchart/invitations/accept/1b3b35d2-821b-4843-9f39-c1be7ed772eb)
-- Issue Tickets (TBD)
+- [Issue Tickets](https://github.com/michaelpfohl/ec13-capstone-gnophy/projects)
 - [Mock Data generated with Mockaroo](https://www.mockaroo.com/466f9bc0)
 
 ## Wireframe
