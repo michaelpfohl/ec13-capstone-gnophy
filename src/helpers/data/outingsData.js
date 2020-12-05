@@ -26,9 +26,12 @@ const getSingleOuting = (outingId) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const updateOuting = (outingObj) => {
-  axios.patch(`${baseUrl}/outings/${outingObj.firebaseKey}.json`, outingObj);
-};
+const updateOuting = (outingObj) => new Promise((resolve, reject) => {
+  axios.patch(`${baseUrl}/outings/${outingObj.firebaseKey}.json`, outingObj)
+    .then((response) => {
+      resolve(response);
+    }).catch((error) => reject(error));
+});
 
 const deleteOuting = (outingId) => axios.delete(`${baseUrl}/outings/${outingId}`);
 
