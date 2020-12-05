@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import {
   Collapse,
   Navbar,
@@ -15,6 +17,14 @@ const MainNavbar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const logMeOut = (e) => {
+    e.preventDefault();
+    window.sessionStorage.removeItem('ua');
+    firebase.auth().signOut();
+    window.location.href = '/';
+  };
+
+  const { user } = props;
   return (
     <div>
       <Navbar className="main--navbar" expand="md">
@@ -35,7 +45,18 @@ const MainNavbar = (props) => {
               <NavLink className="nav--links" href="/about">About</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Log Out</NavbarText>
+          <NavbarText>
+          <div className="form-inline my-2 my-lg-0">
+              {user && (
+                <button
+                  className="nav-link btn btn-danger"
+                  onClick={logMeOut}
+                >
+                  Logout
+                </button>
+              )}
+            </div>
+          </NavbarText>
         </Collapse>
       </Navbar>
     </div>

@@ -14,7 +14,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path="/"
-        component={Home}
+        component={() => <Home user={user}/>}
       />
       <Route
         exact
