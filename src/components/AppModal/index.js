@@ -12,7 +12,7 @@ const AppModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle} className="mt-4">
+      <Button color="danger" onClick={toggle} className="modal-button">
         {buttonLabel}
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
