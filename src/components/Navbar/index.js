@@ -12,59 +12,6 @@ import {
   NavbarText,
 } from 'reactstrap';
 
-// class MainNavbar extends Component {
-//   const [isOpen, setIsOpen] = useState(false);
-//   toggle = () => setIsOpen(!isOpen);
-
-//   logMeOut = (e) => {
-//     e.preventDefault();
-//     firebase.auth().signOut();
-//   };
-
-//   render() {
-//     const { user } = this.props;
-
-//     return (
-//       <div>
-//         <Navbar className="main--navbar" expand="md">
-//           <NavbarBrand className="nav--header" href="/">Gnophy</NavbarBrand>
-//           <NavbarToggler onClick={toggle} />
-//           <Collapse isOpen={isOpen} navbar>
-//             <Nav className="mr-auto" navbar>
-//               <NavItem>
-//                 <NavLink className="nav--links" href="/profile">Profile</NavLink>
-//               </NavItem>
-//               <NavItem>
-//                 <NavLink className="nav--links" href="/outings">Outings</NavLink>
-//               </NavItem>
-//               <NavItem>
-//                 <NavLink className="nav--links" href="/sightings">Sightings</NavLink>
-//               </NavItem>
-//               <NavItem>
-//                 <NavLink className="nav--links" href="/about">About</NavLink>
-//               </NavItem>
-//             </Nav>
-//             <NavbarText>
-//             <div className="form-inline my-2 my-lg-0">
-//                 {user && (
-//                   <button
-//                     className="nav-link btn btn-danger"
-//                     onClick={this.logMeOut}
-//                   >
-//                     Logout
-//                   </button>
-//                 )}
-//               </div>
-//             </NavbarText>
-//           </Collapse>
-//         </Navbar>
-//       </div>
-//     );
-//   }
-// }
-
-// export default MainNavbar;
-
 const MainNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -72,7 +19,9 @@ const MainNavbar = (props) => {
 
   const logMeOut = (e) => {
     e.preventDefault();
+    window.sessionStorage.removeItem('ua');
     firebase.auth().signOut();
+    window.location.href = '/';
   };
 
   const { user } = props;

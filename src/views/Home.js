@@ -20,7 +20,6 @@ class Home extends Component {
       }
       return component;
     };
-    console.warn(user);
 
     return (
       <div className="home--container">
