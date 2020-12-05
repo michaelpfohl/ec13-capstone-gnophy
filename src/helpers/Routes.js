@@ -24,7 +24,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path="/outings"
-        component={Outings}
+        component={() => <Outings user={user}/>}
       />
       <Route
         exact

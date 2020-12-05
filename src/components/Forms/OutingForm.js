@@ -54,7 +54,7 @@ class OutingForm extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center">
-        <form onSubmit={this.handleSubmit} className="add-board-form">
+        <form onSubmit={this.handleSubmit} className="add-outing-form">
           <input
             type="text"
             name="name"
