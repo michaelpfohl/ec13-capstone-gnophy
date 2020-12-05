@@ -2,13 +2,15 @@ import axios from 'axios';
 
 const baseUrl = 'https://gnophy-6c57e-default-rtdb.firebaseio.com';
 
-const createOuting = (outingObj) => {
+const createOuting = (outingObj) => new Promise((resolve, reject) => {
   axios.post(`${baseUrl}/outings.json`, outingObj).then((response) => {
-    axios.patch(`${baseUrl}/outings/${response.data.name}`, {
+    axios.patch(`${baseUrl}/outings/${response.data.name}.json`, {
       firebaseKey: response.data.name,
+    }).then((res) => {
+      resolve(res);
     });
-  }).catch((error) => console.warn(error));
-};
+  }).catch((error) => reject(error));
+});
 
 const getOutings = (userId) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/outings.json?orderBy="userId"&equalTo="${userId}"`)
