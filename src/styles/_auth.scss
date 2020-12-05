@@ -1,0 +1,18 @@
+.auth-container {
+  margin-top: 8%;
+  background: $navBackground;
+  padding: 4%;
+  border-radius: 30px;
+  color: $navText;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.auth-header {
+  margin-bottom: 2%;
+}
+
+.auth-subheader {
+  margin-bottom: 5%;
+}

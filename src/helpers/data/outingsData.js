@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = '';
+const baseUrl = 'https://gnophy-6c57e-default-rtdb.firebaseio.com/';
 
 const createOuting = (outingObj) => {
   axios.post(`${baseUrl}/outings.json`, outingObj).then((response) => {

@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
 
+import Loader from '../components/Loader';
+import HomeComponent from '../components/HomeComponent';
+import Auth from '../components/Auth';
+
 class Home extends Component {
   state = {};
 
   render() {
+    const { user } = this.props;
+    const loadComponent = () => {
+      let component = '';
+      if (user === null) {
+        component = <Loader />;
+      } else if (user) {
+        component = <HomeComponent />;
+      } else {
+        component = <Auth />;
+      }
+      return component;
+    };
+    console.warn(user);
+
     return (
       <div className="home--container">
-        <h1 className="home--header">Home</h1>
+        {loadComponent()}
       </div>
     );
   }
