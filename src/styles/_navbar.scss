@@ -1,0 +1,15 @@
+// @import 'variables';
+
+.main--navbar {
+  background-color: $navBackground;
+}
+
+.nav--header {
+  font-family: 'Courier New', Courier, monospace;
+  color: $navHeader;
+}
+
+.nav--links {
+  margin: auto 30px;
+  color: $navText;
+}
