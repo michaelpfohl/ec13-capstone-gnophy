@@ -33,7 +33,7 @@ const updateOuting = (outingObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const deleteOuting = (outingId) => axios.delete(`${baseUrl}/outings/${outingId}`);
+const deleteOuting = (outingId) => axios.delete(`${baseUrl}/outings/${outingId}.json`);
 
 export default {
   createOuting,
