@@ -1,5 +1,6 @@
 .outing-card {
   margin: 50px;
+  width: 25rem;
   transition: all 0.25s ease-in-out;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
@@ -7,6 +8,12 @@
 
 .outing-card:hover {
   transform: scale(1.02);
+}
+
+.card-button {
+  padding: 8px 12px;
+  margin: 0;
+  height: 50%;
 }
 
 .card-button-success {

@@ -26,7 +26,12 @@ class Outings extends Component {
   };
 
   removeOuting = (e) => {
-    console.warn(e.target.id);
+    e.preventDefault();
+    const notRemovedOutings = this.state.outings.filter((outing) => outing.firebaseKey !== e.target.id);
+    this.setState({
+      outings: notRemovedOutings,
+    });
+    outingsData.deleteOuting(e.target.id);
   };
 
   render() {
