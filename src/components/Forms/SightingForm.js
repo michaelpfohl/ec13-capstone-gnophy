@@ -44,10 +44,11 @@ class SightingForm extends Component {
   };
 
   handleSubmit = (e) => {
+    const { outingId } = this.props;
     e.preventDefault();
     if (this.state.firebaseKey === '') {
       sightingsData.createSighting(this.state).then(() => {
-        this.props.onUpdate?.();
+        this.props.onUpdate?.(outingId);
       });
     } else {
       sightingsData.updateSighting(this.state).then(() => {

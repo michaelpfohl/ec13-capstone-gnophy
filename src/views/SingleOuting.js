@@ -17,7 +17,15 @@ class SingleOuting extends Component {
 
   componentDidMount() {
     const outingId = this.props.match.params.id;
-    this.getOutingInfo(outingId);
+    this.setState({ outingId });
+    outingsData.getSingleOuting(outingId).then((outingResponse) => {
+      sightingsData.getOutingSightings(outingId).then((sightingResponse) => {
+        this.setState({
+          outing: outingResponse,
+          sightings: sightingResponse,
+        });
+      });
+    });
   }
 
   getOutingInfo = (outingId) => {
@@ -36,26 +44,24 @@ class SingleOuting extends Component {
   }
 
   render() {
-    const { outing, sightings } = this.state;
+    const { outing, outingId, sightings } = this.state;
     const showSightings = () => (
       sightings.map((sighting) => <SightingCard key={sighting.firebaseKey}
         sighting={sighting}
         removeSighting={this.removeSighting} />)
     );
     return (
-      <div>
+      <div className="fade">
         <SingleOutingHeader outing={outing} />
         <div className="d-flex justify-content-around">
           <AppModal title={'Create Sighting'} buttonLabel={'Create Sighting'}>
-            <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outing.firebaseKey}/>
+            <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
           </AppModal>
           <AppModal title={'Update Outing'} buttonLabel={'Update Outing'}>
-            {Object.keys(outing).length && (
               <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
-            )}
           </AppModal>
         </div>
-        <div className="d-flex justify-content-around">
+        <div className="d-flex flex-wrap justify-content-center">
           { sightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Click the button above to add one!</p></div>}
         </div>
       </div>
