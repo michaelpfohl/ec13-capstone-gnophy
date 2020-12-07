@@ -88,15 +88,18 @@ class SightingForm extends Component {
             className="form-control form-control-lg m-1"
             required
           />
-          <input
-            type="text"
+          <select
+            className="form-control form-control-lg m-1"
             name="type"
             value={this.state.type}
             onChange={this.handleChange}
-            placeholder="Type"
-            className="form-control form-control-lg m-1"
             required
-          />
+          >
+            <option value="" selected disabled hidden>Select Type</option>
+            <option value="Flora">Flora</option>
+            <option value="Fauna">Fauna</option>
+            <option value="Fungi">Fungi</option>
+          </select>
           <input
             type="text"
             name="notes"
