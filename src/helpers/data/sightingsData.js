@@ -47,7 +47,17 @@ const updateSighting = (sightingObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const deleteSighting = (outingId) => axios.delete(`${baseUrl}/sightings/${outingId}.json`);
+const deleteSighting = (sightingId) => axios.delete(`${baseUrl}/sightings/${sightingId}.json`);
+
+const deleteOutingSightings = (outingId) => new Promise(() => {
+  axios.get(`${baseUrl}/sightings.json?orderBy="outingId"&equalTo="${outingId}"`)
+    .then((response) => {
+      const toBeDeleted = Object.keys(response.data);
+      toBeDeleted.forEach((sightingId) => {
+        deleteSighting(sightingId);
+      });
+    });
+});
 
 export default {
   createSighting,
@@ -57,4 +67,5 @@ export default {
   getSingleSighting,
   updateSighting,
   deleteSighting,
+  deleteOutingSightings,
 };

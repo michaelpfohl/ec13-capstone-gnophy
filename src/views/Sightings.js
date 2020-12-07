@@ -23,6 +23,14 @@ class Sightings extends Component {
     });
   }
 
+  removeSighting = (e) => {
+    const { sightings } = this.state;
+    e.preventDefault();
+    const notRemovedSightings = sightings.filter((sighting) => sighting.firebaseKey !== e.target.id);
+    this.setState({ sightings: notRemovedSightings });
+    sightingsData.deleteSighting(e.target.id).then(() => this.getSightings());
+  };
+
   setLoading = () => {
     this.timer = setInterval(() => {
       this.setState({ loading: false });

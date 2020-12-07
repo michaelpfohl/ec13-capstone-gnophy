@@ -40,7 +40,17 @@ class SingleOuting extends Component {
   };
 
   removeSighting = (e) => {
-    console.warn(e.target.id);
+    const { sightings, outing } = this.state;
+    e.preventDefault();
+    const notRemovedSightings = sightings.filter((sighting) => sighting.firebaseKey !== e.target.id);
+    this.setState({ sightings: notRemovedSightings });
+    sightingsData.deleteSighting(e.target.id).then(() => this.getOutingInfo(outing.firebaseKey));
+  };
+
+  removeOuting = (e) => {
+    e.preventDefault();
+    sightingsData.deleteOutingSightings(e.target.id);
+    outingsData.deleteOuting(e.target.id).then(() => this.props.history.goBack());
   }
 
   render() {
@@ -59,6 +69,24 @@ class SingleOuting extends Component {
           </AppModal>
           <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
               <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
+          </AppModal>
+          <AppModal
+            color='danger'
+            className="delete-modal d-flex"
+            title={'Delete Outing'}
+            buttonLabel={'Delete Outing'}
+          >
+            <p>
+              Are you sure you want to delete this outing and all of its
+              sightings?
+            </p>
+            <button
+              className="card-button card-button-danger"
+              id={outing.firebaseKey}
+              onClick={(e) => this.removeOuting(e)}
+            >
+              Yes, Delete
+            </button>
           </AppModal>
         </div>
         <div className="d-flex flex-wrap justify-content-center">
