@@ -6,10 +6,12 @@ import outingsData from '../helpers/data/outingsData';
 import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
 import OutingCard from '../components/Cards/OutingCard';
+import Loader from '../components/Loader';
 
 class Outings extends Component {
   state = {
     outings: [],
+    loading: true,
   };
 
   componentDidMount() {
@@ -21,7 +23,7 @@ class Outings extends Component {
     outingsData.getOutings(currentUser).then((res) => {
       this.setState({
         outings: res,
-      });
+      }, this.setLoading);
     });
   };
 
@@ -34,8 +36,14 @@ class Outings extends Component {
     outingsData.deleteOuting(e.target.id);
   };
 
+  setLoading = () => {
+    this.timer = setInterval(() => {
+      this.setState({ loading: false });
+    }, 1000);
+  }
+
   render() {
-    const { outings } = this.state;
+    const { outings, loading } = this.state;
     const showOutings = () => (
       outings.map((outing) => (
         <OutingCard
@@ -46,7 +54,11 @@ class Outings extends Component {
       ))
     );
     return (
-      <div className="outings--container">
+      <>
+      { loading ? (
+          <Loader />
+      ) : (
+      <div className="outings--container fade">
         <AppModal title={'Create Outing'} buttonLabel={'Create Outing'}>
           <OutingForm />
         </AppModal>
@@ -54,6 +66,8 @@ class Outings extends Component {
           {showOutings()}
         </div>
       </div>
+      )}
+      </>
     );
   }
 }

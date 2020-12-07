@@ -19,6 +19,13 @@ const getSightings = (userId) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const getUserSightings = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/sightings.json?orderBy="userId"&equalTo="${userId}"`)
+    .then((response) => {
+      resolve(Object.values(response.data));
+    }).catch((error) => reject(error));
+});
+
 const getOutingSightings = (outingId) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/sightings.json?orderBy="outingId"&equalTo="${outingId}"`)
     .then((response) => {
@@ -45,6 +52,7 @@ const deleteSighting = (outingId) => axios.delete(`${baseUrl}/sightings/${outing
 export default {
   createSighting,
   getSightings,
+  getUserSightings,
   getOutingSightings,
   getSingleSighting,
   updateSighting,

@@ -17,14 +17,7 @@ class SingleOuting extends Component {
 
   componentDidMount() {
     const outingId = this.props.match.params.id;
-    // this.getOutingInfo(outingId);
     this.setState({ outingId });
-    // outingsData.getSingleOuting(outingId).then((response) => {
-    //   this.setState({ outing: response });
-    // });
-    // sightingsData.getOutingSightings(outingId).then((response) => {
-    //   this.setState({ sightings: response });
-    // });
     outingsData.getSingleOuting(outingId).then((outingResponse) => {
       sightingsData.getOutingSightings(outingId).then((sightingResponse) => {
         this.setState({
@@ -58,19 +51,15 @@ class SingleOuting extends Component {
         removeSighting={this.removeSighting} />)
     );
     return (
-      <div>
+      <div className="fade">
         <SingleOutingHeader outing={outing} />
         <div className="d-flex justify-content-around">
-          {/* {Object.keys(outing).length && ( */}
           <AppModal title={'Create Sighting'} buttonLabel={'Create Sighting'}>
             <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
           </AppModal>
-          {/* )} */}
-          {/* {Object.keys(outing).length && ( */}
           <AppModal title={'Update Outing'} buttonLabel={'Update Outing'}>
               <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
           </AppModal>
-          {/* )} */}
         </div>
         <div className="d-flex flex-wrap justify-content-center">
           { sightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Click the button above to add one!</p></div>}

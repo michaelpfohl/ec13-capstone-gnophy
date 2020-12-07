@@ -35,7 +35,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path="/sightings"
-        component={Sightings}
+        component={() => <Sightings user={user}/>}
       />
       <Route
         exact
