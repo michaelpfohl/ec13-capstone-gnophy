@@ -1,0 +1,41 @@
+.ss-container {
+  margin: 50px;
+  background-color: #ffff7d;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.ss-image {
+  width: 700px;
+  height: 700px;
+  border-radius: 400px;
+  padding: 50px;
+}
+
+.ss-info-container {
+  padding: 50px;
+  margin: auto;
+}
+
+.ss-name {
+  font-size: 5rem;
+  letter-spacing: 1.5px;
+}
+
+.ss-subheader-container {
+  font-size: 2rem;
+}
+
+.ss-subheader {
+  display: inline;
+  margin: 50px 3%;
+}
+
+.ss-notes {
+  margin: 20px 100px;
+  font-size: 1.5rem;
+}
+
+.ss-edit-button .modal-content {
+  background: green;
+}

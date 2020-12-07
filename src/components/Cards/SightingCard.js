@@ -39,6 +39,7 @@ class SightingCard extends Component {
                 </Link>
               </Button>
               <AppModal
+                color="danger"
                 className="delete-modal d-flex"
                 title={'Delete Sighting'}
                 buttonLabel={<i class="fas fa-times-circle"></i>}

@@ -13,23 +13,29 @@
 @import 'modal';
 @import 'singleOuting';
 @import 'sightingCard';
+@import 'singleSighting';
 
 body {
   background: $background;
   font-family: 'Futura';
 }
 
-.fade {
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards;
-}
+// .fader {
+//   animation: fadeInAnimation ease 3s;
+//   animation-iteration-count: 1; 
+//   animation-fill-mode: forwards;
+// }
 
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-   } 
-} 
+// @keyframes fadeInAnimation { 
+//   0% { 
+//       opacity: 0; 
+//   } 
+//   100% { 
+//       opacity: 1; 
+//    } 
+// }
+
+.modal-button {
+  border-radius: 40px;
+  padding: 10px 13px;
+}

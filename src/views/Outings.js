@@ -58,8 +58,8 @@ class Outings extends Component {
       { loading ? (
           <Loader />
       ) : (
-      <div className="outings--container fade">
-        <AppModal title={'Create Outing'} buttonLabel={'Create Outing'}>
+      <div className="outings--container">
+        <AppModal color="success" title={'Create Outing'} buttonLabel={'Create Outing'}>
           <OutingForm />
         </AppModal>
         <div className="outings-container d-flex flex-wrap justify-content-center">

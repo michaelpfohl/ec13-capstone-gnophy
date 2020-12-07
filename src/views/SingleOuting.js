@@ -51,13 +51,13 @@ class SingleOuting extends Component {
         removeSighting={this.removeSighting} />)
     );
     return (
-      <div className="fade">
+      <div>
         <SingleOutingHeader outing={outing} />
         <div className="d-flex justify-content-around">
-          <AppModal title={'Create Sighting'} buttonLabel={'Create Sighting'}>
+          <AppModal color="success" title={'Create Sighting'} buttonLabel={'Create Sighting'}>
             <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
           </AppModal>
-          <AppModal title={'Update Outing'} buttonLabel={'Update Outing'}>
+          <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
               <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
           </AppModal>
         </div>
