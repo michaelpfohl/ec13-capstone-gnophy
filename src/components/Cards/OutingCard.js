@@ -38,6 +38,7 @@ class OutingCard extends Component {
                 </Link>
               </Button>
               <AppModal
+                color='danger'
                 className="delete-modal d-flex"
                 title={'Delete Outing'}
                 buttonLabel={<i class="fas fa-times-circle"></i>}

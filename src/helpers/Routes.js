@@ -6,6 +6,7 @@ import Profile from '../views/Profile';
 import Outings from '../views/Outings';
 import SingleOuting from '../views/SingleOuting';
 import Sightings from '../views/Sightings';
+import SingleSighting from '../views/SingleSighting';
 import About from '../views/About';
 import NotFound from '../views/NotFound';
 
@@ -36,6 +37,11 @@ export default function Routes({ user }) {
         exact
         path="/sightings"
         component={() => <Sightings user={user}/>}
+      />
+      <Route
+        exact
+        path="/sightings/:id"
+        component={(props) => <SingleSighting user={user} {...props}/>}
       />
       <Route
         exact

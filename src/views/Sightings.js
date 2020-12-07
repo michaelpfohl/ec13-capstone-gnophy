@@ -41,7 +41,7 @@ class Sightings extends Component {
       { loading ? (
           <Loader />
       ) : (
-      <div className="sightings--container fade">
+      <div className="sightings--container">
         <h1 className="sightings--header">All Your Sightings</h1>
         <div className="d-flex flex-wrap justify-content-center">
           { sightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Create or go to an outing in order to add a sighting!</p></div>}
