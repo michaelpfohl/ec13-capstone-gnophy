@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import getUser from '../helpers/data/authData';
 import outingsData from '../helpers/data/outingsData';
+import sightingsData from '../helpers/data/sightingsData';
 
 import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
@@ -33,6 +34,7 @@ class Outings extends Component {
     this.setState({
       outings: notRemovedOutings,
     });
+    sightingsData.deleteOutingSightings(e.target.id);
     outingsData.deleteOuting(e.target.id);
   };
 
@@ -60,7 +62,7 @@ class Outings extends Component {
       ) : (
       <div className="outings--container">
         <AppModal color="success" title={'Create Outing'} buttonLabel={'Create Outing'}>
-          <OutingForm />
+          <OutingForm onUpdate={this.getOutings}/>
         </AppModal>
         <div className="outings-container d-flex flex-wrap justify-content-center">
           {showOutings()}
