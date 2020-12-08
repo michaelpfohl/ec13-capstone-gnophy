@@ -9,7 +9,9 @@ class SingleOutingHeader extends Component {
           {outing !== null && (
           <>
           <h1>{outing.name}</h1>
+          <h1>·</h1>
           <h1>{outing.location}</h1>
+          <h1>·</h1>
           <h1>{outing.biome}</h1>
           </>
           )}

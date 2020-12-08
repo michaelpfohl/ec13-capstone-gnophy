@@ -5,8 +5,8 @@ import outingsData from '../helpers/data/outingsData';
 import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
 import SightingForm from '../components/Forms/SightingForm';
-import SingleOutingHeader from '../components/SingleOutingHeader';
-import SightingCard from '../components/Cards/SightingCard';
+import SingleOutingHeader from '../components/SingleOuting/header';
+import SightingList from '../components/SingleOuting/sighting';
 import sightingsData from '../helpers/data/sightingsData';
 
 class SingleOuting extends Component {
@@ -56,40 +56,42 @@ class SingleOuting extends Component {
   render() {
     const { outing, outingId, sightings } = this.state;
     const showSightings = () => (
-      sightings.map((sighting) => <SightingCard key={sighting.firebaseKey}
+      sightings.map((sighting) => <SightingList key={sighting.firebaseKey}
         sighting={sighting}
         removeSighting={this.removeSighting} />)
     );
     return (
       <div>
         <SingleOutingHeader outing={outing} />
-        <div className="d-flex justify-content-around">
-          <AppModal color="success" title={'Create Sighting'} buttonLabel={'Create Sighting'}>
-            <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
-          </AppModal>
-          <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
-              <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
-          </AppModal>
-          <AppModal
-            color='danger'
-            className="delete-modal d-flex"
-            title={'Delete Outing'}
-            buttonLabel={'Delete Outing'}
-          >
-            <p>
-              Are you sure you want to delete this outing and all of its
-              sightings?
-            </p>
-            <button
-              className="card-button card-button-danger"
-              id={outing.firebaseKey}
-              onClick={(e) => this.removeOuting(e)}
+        <div className="d-flex justify-content-center">
+            <div className="so-button-container d-flex justify-content-around">
+            <AppModal color="success" title={'Create Sighting'} buttonLabel={'Create Sighting'}>
+                <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
+            </AppModal>
+            <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
+                <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
+            </AppModal>
+            <AppModal
+                color='danger'
+                className="delete-modal d-flex"
+                title={'Delete Outing'}
+                buttonLabel={'Delete Outing'}
             >
-              Yes, Delete
-            </button>
-          </AppModal>
+                <p>
+                Are you sure you want to delete this outing and all of its
+                sightings?
+                </p>
+                <button
+                className="card-button card-button-danger"
+                id={outing.firebaseKey}
+                onClick={(e) => this.removeOuting(e)}
+                >
+                Yes, Delete
+                </button>
+            </AppModal>
+            </div>
         </div>
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center so-sightings-container">
           { sightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Click the button above to add one!</p></div>}
         </div>
       </div>

@@ -1,14 +1,67 @@
 .so-container {
   margin-top: 50px;
   padding: 20px;
-  background: #f0ec1d;
+  background: #ffff7d;
   border-radius: 10px;
+  width: 80%;
+}
+
+.so-button-container {
   width: 60%;
 }
 
+.so-sightings-container {
+  margin: 50px 10%;
+  background: #ffff7d;
+  border-radius: 10px;
+}
+
+.sl-container {
+  width: 80vw;
+  padding: 0;
+  margin: 0;
+}
+
+.sl-center-container {
+  align-items: center;
+  margin: auto;
+}
+
+.sl-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 400px;
+  margin: 50px;
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+}
+
+.sl-info-container {
+  padding: 50px;
+  margin: auto;
+  font-style: italic;
+}
+
+.sl-name {
+  font-size: 4.5rem;
+  letter-spacing: 1.5px;
+}
+
+.sl-subheader-container {
+  font-size: 2rem;
+}
+
+.spacer {
+  margin: 0px 25px;
+}
+
+.sl-button-container {
+  align-items: center;
+}
+
 .no-sightings {
-  margin-top: 50px;
-  color: $navHeader;
+  margin: 50px 0px;
+  color: $navBackground;
 }
 
 .no-sightings-header {
@@ -17,4 +70,11 @@
 
 .no-sightings-subheader {
   font-size: 3rem;
+}
+
+hr {
+  height: 3px;
+  width: 95%;
+  background: $navBackground;
+  border-radius: 10px;
 }

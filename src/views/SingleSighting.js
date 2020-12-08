@@ -44,7 +44,7 @@ class SingleSighting extends Component {
             <div className="ss-subheader">{sighting.type}</div>
           </div>
           <p className="ss-notes">{sighting.notes}</p>
-          <div className="d-flex justify-content-around">
+          <div className="d-flex justify-content-center">
             <AppModal
               color="success"
               title={'Update Sighting'}
@@ -55,6 +55,7 @@ class SingleSighting extends Component {
                 onUpdate={this.getSightingInfo}
               />
             </AppModal>
+            <div className="spacer"></div>
             <AppModal
               color="danger"
               className="delete-modal d-flex"
