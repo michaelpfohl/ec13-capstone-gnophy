@@ -4,6 +4,7 @@ import getUser from '../helpers/data/authData';
 import sightingsData from '../helpers/data/sightingsData';
 
 import SightingCard from '../components/Cards/SightingCard';
+import SearchInput from '../components/SearchInput';
 import Loader from '../components/Loader';
 
 class Sightings extends Component {
@@ -62,12 +63,14 @@ class Sightings extends Component {
           <Loader />
       ) : (
       <div className="sightings--container">
-        <h1 className="sightings--header">All Your Sightings</h1>
-        <div className="filter-buttons d-flex justify-content-around">
-          <button className="btn btn-success" id="Flora" onClick={this.filterByType}>Flora</button>
-          <button className="btn btn-success" id="Fauna" onClick={this.filterByType}>Fauna</button>
-          <button className="btn btn-success" id="Fungi" onClick={this.filterByType}>Fungi</button>
-          <button className="btn btn-success" id="All" onClick={this.filterByType}>All</button>
+        <SearchInput type="sighting"/>
+        <div className="d-flex justify-content-center">
+          <div className="filter-buttons d-flex justify-content-around">
+            <button className="btn btn-success" id="Flora" onClick={this.filterByType}>Flora</button>
+            <button className="btn btn-success" id="Fauna" onClick={this.filterByType}>Fauna</button>
+            <button className="btn btn-success" id="Fungi" onClick={this.filterByType}>Fungi</button>
+            <button className="btn btn-success" id="All" onClick={this.filterByType}>All</button>
+          </div>
         </div>
         <div className="d-flex flex-wrap justify-content-center">
           { filteredSightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Create or go to an outing in order to add a sighting!</p></div>}

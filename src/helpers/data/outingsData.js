@@ -35,10 +35,18 @@ const updateOuting = (outingObj) => new Promise((resolve, reject) => {
 
 const deleteOuting = (outingId) => axios.delete(`${baseUrl}/outings/${outingId}.json`);
 
+const searchOutings = (userId, searchTerm) => new Promise((resolve, reject) => {
+  getOutings(userId).then((response) => {
+    const searchResults = response.filter((res) => res.name.toLowerCase().includes(searchTerm) || res.location.toLowerCase().includes(searchTerm) || res.biome.toLowerCase().includes(searchTerm));
+    resolve(searchResults);
+  }).catch((error) => reject(error));
+});
+
 export default {
   createOuting,
   getOutings,
   getSingleOuting,
   updateOuting,
   deleteOuting,
+  searchOutings,
 };
