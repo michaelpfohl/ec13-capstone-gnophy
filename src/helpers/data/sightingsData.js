@@ -59,6 +59,13 @@ const deleteOutingSightings = (outingId) => new Promise(() => {
     });
 });
 
+const searchSightings = (userId, searchTerm) => new Promise((resolve, reject) => {
+  getUserSightings(userId).then((response) => {
+    const searchResults = response.filter((sighting) => sighting.name.toLowerCase().includes(searchTerm) || sighting.location.toLowerCase().includes(searchTerm) || sighting.biome.toLowerCase().includes(searchTerm) || sighting.type.toLowerCase().includes(searchTerm) || sighting.notes.toLowerCase().includes(searchTerm));
+    resolve(searchResults);
+  }).catch((error) => reject(error));
+});
+
 export default {
   createSighting,
   getSightings,
@@ -68,4 +75,5 @@ export default {
   updateSighting,
   deleteSighting,
   deleteOutingSightings,
+  searchSightings,
 };

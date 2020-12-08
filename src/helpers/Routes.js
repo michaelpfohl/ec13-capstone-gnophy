@@ -8,6 +8,7 @@ import SingleOuting from '../views/SingleOuting';
 import Sightings from '../views/Sightings';
 import SingleSighting from '../views/SingleSighting';
 import About from '../views/About';
+import SearchResults from '../views/SearchResults';
 import NotFound from '../views/NotFound';
 
 export default function Routes({ user }) {
@@ -21,7 +22,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path="/profile"
-        component={Profile}
+        component={() => <Profile user={user}/>}
       />
       <Route
         exact
@@ -47,6 +48,11 @@ export default function Routes({ user }) {
         exact
         path="/about"
         component={About}
+      />
+      <Route
+        exact
+        path="/search/:term/:type"
+        component={(props) => <SearchResults {...props} />}
       />
       <Route component={NotFound} />
     </Switch>

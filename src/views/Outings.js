@@ -8,6 +8,7 @@ import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
 import OutingCard from '../components/Cards/OutingCard';
 import Loader from '../components/Loader';
+import SearchInput from '../components/SearchInput';
 
 class Outings extends Component {
   state = {
@@ -61,6 +62,7 @@ class Outings extends Component {
           <Loader />
       ) : (
       <div className="outings--container">
+        <SearchInput type="outing"/>
         <AppModal color="success" title={'Create Outing'} buttonLabel={'Create Outing'}>
           <OutingForm onUpdate={this.getOutings}/>
         </AppModal>
