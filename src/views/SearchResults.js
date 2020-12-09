@@ -6,7 +6,6 @@ import sightingsData from '../helpers/data/sightingsData';
 
 import OutingCard from '../components/Cards/OutingCard';
 import SightingCard from '../components/Cards/SightingCard';
-import SearchInput from '../components/SearchInput';
 
 class SearchResults extends Component {
   state = {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import outingsData from '../helpers/data/outingsData';
+import userData from '../helpers/data/userData';
 
 import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
@@ -17,6 +18,12 @@ class SingleOuting extends Component {
 
   componentDidMount() {
     const outingId = this.props.match.params.id;
+    const { user } = this.props;
+    if (user !== null) {
+      userData.getUser(user).then((response) => {
+        this.setState({ experience: response.experience });
+      });
+    }
     this.setState({ outingId });
     outingsData.getSingleOuting(outingId).then((outingResponse) => {
       sightingsData.getOutingSightings(outingId).then((sightingResponse) => {
@@ -29,6 +36,12 @@ class SingleOuting extends Component {
   }
 
   getOutingInfo = (outingId) => {
+    const { user } = this.props;
+    if (user !== null) {
+      userData.getUser(user).then((response) => {
+        this.setState({ experience: response.experience });
+      });
+    }
     outingsData.getSingleOuting(outingId).then((outingResponse) => {
       sightingsData.getOutingSightings(outingId).then((sightingResponse) => {
         this.setState({
@@ -54,7 +67,9 @@ class SingleOuting extends Component {
   }
 
   render() {
-    const { outing, outingId, sightings } = this.state;
+    const {
+      outing, outingId, sightings, experience,
+    } = this.state;
     const showSightings = () => (
       sightings.map((sighting) => <SightingList key={sighting.firebaseKey}
         sighting={sighting}
@@ -66,7 +81,7 @@ class SingleOuting extends Component {
         <div className="d-flex justify-content-center">
             <div className="so-button-container d-flex justify-content-around">
             <AppModal color="success" title={'Create Sighting'} buttonLabel={'Create Sighting'}>
-                <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId}/>
+                <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId} experience={experience}/>
             </AppModal>
             <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
                 <OutingForm outing={outing} onUpdate={this.getOutingInfo} />

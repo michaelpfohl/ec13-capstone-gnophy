@@ -29,6 +29,7 @@ const setCurrentUser = (userObj) => {
     name: userObj.displayName,
     email: userObj.email,
     lastSignInTime: userObj.metadata.lastSignInTime,
+    experience: 0,
   };
 
   const loggedIn = window.sessionStorage.getItem('ua');
@@ -38,4 +39,18 @@ const setCurrentUser = (userObj) => {
   return user;
 };
 
-export default { setCurrentUser };
+const getUser = (user) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${user.uid}"`).then((response) => {
+    resolve(Object.values(response.data)[0]);
+  }).catch((error) => reject(error));
+});
+
+const addExperience = (userId, value) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${userId}"`).then((response) => {
+    const userObj = Object.values(response.data)[0];
+    axios.patch(`${baseUrl}/users/${userObj.firebaseKey}.json`,
+      { experience: value }).then(() => resolve).catch((error) => reject(error));
+  });
+});
+
+export default { setCurrentUser, addExperience, getUser };
