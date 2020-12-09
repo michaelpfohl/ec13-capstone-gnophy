@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import outingsData from '../helpers/data/outingsData';
 import userData from '../helpers/data/userData';
+import sightingsData from '../helpers/data/sightingsData';
 
 import AppModal from '../components/AppModal';
 import OutingForm from '../components/Forms/OutingForm';
 import SightingForm from '../components/Forms/SightingForm';
 import SingleOutingHeader from '../components/SingleOuting/header';
 import SightingList from '../components/SingleOuting/sighting';
-import sightingsData from '../helpers/data/sightingsData';
 
 class SingleOuting extends Component {
   state = {
@@ -57,57 +57,85 @@ class SingleOuting extends Component {
     e.preventDefault();
     const notRemovedSightings = sightings.filter((sighting) => sighting.firebaseKey !== e.target.id);
     this.setState({ sightings: notRemovedSightings });
-    sightingsData.deleteSighting(e.target.id).then(() => this.getOutingInfo(outing.firebaseKey));
+    sightingsData
+      .deleteSighting(e.target.id)
+      .then(() => this.getOutingInfo(outing.firebaseKey));
   };
 
   removeOuting = (e) => {
     e.preventDefault();
     sightingsData.deleteOutingSightings(e.target.id);
-    outingsData.deleteOuting(e.target.id).then(() => this.props.history.goBack());
-  }
+    outingsData
+      .deleteOuting(e.target.id)
+      .then(() => this.props.history.goBack());
+  };
 
   render() {
     const {
       outing, outingId, sightings, experience,
     } = this.state;
-    const showSightings = () => (
-      sightings.map((sighting) => <SightingList key={sighting.firebaseKey}
-        sighting={sighting}
-        removeSighting={this.removeSighting} />)
-    );
+    const showSightings = () => sightings.map((sighting) => (
+        <SightingList
+          key={sighting.firebaseKey}
+          sighting={sighting}
+          removeSighting={this.removeSighting}
+        />
+    ));
     return (
       <div>
         <SingleOutingHeader outing={outing} />
         <div className="d-flex justify-content-center">
-            <div className="so-button-container d-flex justify-content-around">
-            <AppModal color="success" title={'Create Sighting'} buttonLabel={'Create Sighting'}>
-                <SightingForm sightings={sightings} onUpdate={this.getOutingInfo} outingId={outingId} experience={experience}/>
-            </AppModal>
-            <AppModal color="success" title={'Update Outing'} buttonLabel={'Update Outing'}>
-                <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
+          <div className="so-button-container d-flex justify-content-around">
+            <AppModal
+              color="success"
+              title={'Create Sighting'}
+              buttonLabel={'Create Sighting'}
+            >
+              <SightingForm
+                sightings={sightings}
+                onUpdate={this.getOutingInfo}
+                outingId={outingId}
+                experience={experience}
+              />
             </AppModal>
             <AppModal
-                color='danger'
-                className="delete-modal d-flex"
-                title={'Delete Outing'}
-                buttonLabel={'Delete Outing'}
+              color="success"
+              title={'Update Outing'}
+              buttonLabel={'Update Outing'}
             >
-                <p>
+              <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
+            </AppModal>
+            <AppModal
+              color="danger"
+              className="delete-modal d-flex"
+              title={'Delete Outing'}
+              buttonLabel={'Delete Outing'}
+            >
+              <p>
                 Are you sure you want to delete this outing and all of its
                 sightings?
-                </p>
-                <button
+              </p>
+              <button
                 className="card-button card-button-danger"
                 id={outing.firebaseKey}
                 onClick={(e) => this.removeOuting(e)}
-                >
+              >
                 Yes, Delete
-                </button>
+              </button>
             </AppModal>
-            </div>
+          </div>
         </div>
         <div className="d-flex flex-wrap justify-content-center so-sightings-container">
-          { sightings.length ? showSightings() : <div className="no-sightings"><h1 className="no-sightings-header">No Sightings Yet!</h1><p className="no-sightings-subheader">Click the button above to add one!</p></div>}
+          {sightings.length ? (
+            showSightings()
+          ) : (
+            <div className="no-sightings">
+              <h1 className="no-sightings-header">No Sightings Yet!</h1>
+              <p className="no-sightings-subheader">
+                Click the button above to add one!
+              </p>
+            </div>
+          )}
         </div>
       </div>
     );
