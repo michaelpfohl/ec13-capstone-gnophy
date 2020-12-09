@@ -11,7 +11,7 @@ import About from '../views/About';
 import SearchResults from '../views/SearchResults';
 import NotFound from '../views/NotFound';
 
-export default function Routes({ user }) {
+export default function Routes({ user, experience, addExperience }) {
   return (
     <Switch>
       <Route
@@ -32,7 +32,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path="/outings/:id"
-        component={(props) => <SingleOuting user={user} {...props}/>}
+        component={(props) => <SingleOuting user={user} experience={experience} addExperience={addExperience} {...props}/>}
       />
       <Route
         exact
