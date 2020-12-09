@@ -3,7 +3,6 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 import getUser from '../../helpers/data/authData';
 import sightingsData from '../../helpers/data/sightingsData';
-import userData from '../../helpers/data/userData';
 
 class SightingForm extends Component {
   state = {
@@ -45,13 +44,12 @@ class SightingForm extends Component {
   };
 
   handleSubmit = (e) => {
-    const { outingId, experience } = this.props;
+    const { outingId, experience, addExperience } = this.props;
     const { userId } = this.state;
     e.preventDefault();
     if (this.state.firebaseKey === '') {
       sightingsData.createSighting(this.state).then(() => {
-        const newExperience = experience + 10;
-        userData.addExperience(userId, newExperience);
+        addExperience(userId, experience);
       });
       this.props.onUpdate?.(outingId);
     } else {

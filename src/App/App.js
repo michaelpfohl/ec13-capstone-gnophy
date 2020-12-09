@@ -7,7 +7,6 @@ import fbConnection from '../helpers/connection';
 import userData from '../helpers/data/userData';
 
 import MainNavbar from '../components/Navbar';
-import Experience from '../components/Experience';
 import Routes from '../helpers/Routes';
 
 fbConnection();
@@ -34,6 +33,11 @@ class App extends React.Component {
     this.removeListener();
   }
 
+  addExperience = (userId, experience) => {
+    const newExperience = experience + 10;
+    userData.addExperience(userId, newExperience);
+  }
+
   render() {
     const { user, experience } = this.state;
 
@@ -42,11 +46,10 @@ class App extends React.Component {
         <Router>
           {user && (
             <>
-            <MainNavbar user={user}/>
-            <Experience experience={experience}/>
+            <MainNavbar user={user} experience={experience}/>
             </>
           )}
-          <Routes user={user}/>
+          <Routes user={user} experience={experience} addExperience={this.addExperience}/>
         </Router>
       </div>
     );

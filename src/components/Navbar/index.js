@@ -12,6 +12,8 @@ import {
   NavbarText,
 } from 'reactstrap';
 
+import Experience from '../Experience';
+
 const MainNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +26,7 @@ const MainNavbar = (props) => {
     window.location.href = '/';
   };
 
-  const { user } = props;
+  const { user, experience } = props;
   return (
     <div>
       <Navbar className="main--navbar" expand="md">
@@ -45,6 +47,7 @@ const MainNavbar = (props) => {
               <NavLink className="nav--links" href="/about">About</NavLink>
             </NavItem>
           </Nav>
+          <Experience experience={experience}/>
           <NavbarText>
           <div className="form-inline my-2 my-lg-0">
               {user && (

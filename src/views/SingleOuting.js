@@ -72,8 +72,9 @@ class SingleOuting extends Component {
 
   render() {
     const {
-      outing, outingId, sightings, experience,
+      outing, outingId, sightings,
     } = this.state;
+    const { experience } = this.props;
     const showSightings = () => sightings.map((sighting) => (
         <SightingList
           key={sighting.firebaseKey}
@@ -96,6 +97,7 @@ class SingleOuting extends Component {
                 onUpdate={this.getOutingInfo}
                 outingId={outingId}
                 experience={experience}
+                addExperience={this.props.addExperience}
               />
             </AppModal>
             <AppModal
