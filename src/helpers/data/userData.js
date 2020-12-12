@@ -49,7 +49,10 @@ const addExperience = (userId, value) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${userId}"`).then((response) => {
     const userObj = Object.values(response.data)[0];
     axios.patch(`${baseUrl}/users/${userObj.firebaseKey}.json`,
-      { experience: value }).then(() => resolve).catch((error) => reject(error));
+      { experience: value }).then(() => {
+      window.location.reload();
+      resolve();
+    }).catch((error) => reject(error));
   });
 });
 
