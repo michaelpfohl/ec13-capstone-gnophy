@@ -22,7 +22,7 @@ export default function Routes({ user, experience, addExperience }) {
       <Route
         exact
         path="/profile"
-        component={() => <Profile user={user}/>}
+        component={() => <Profile user={user} experience={experience}/>}
       />
       <Route
         exact

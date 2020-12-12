@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://gnophy-6c57e-default-rtdb.firebaseio.com';
 
+// CRUD
 const createSighting = (sightingObj) => new Promise((resolve, reject) => {
   axios.post(`${baseUrl}/sightings.json`, sightingObj).then((response) => {
     axios.patch(`${baseUrl}/sightings/${response.data.name}.json`, {
@@ -59,11 +60,17 @@ const deleteOutingSightings = (outingId) => new Promise(() => {
     });
 });
 
+// SEARCH & FILTERS
 const searchSightings = (userId, searchTerm) => new Promise((resolve, reject) => {
   getUserSightings(userId).then((response) => {
     const searchResults = response.filter((sighting) => sighting.name.toLowerCase().includes(searchTerm) || sighting.location.toLowerCase().includes(searchTerm) || sighting.biome.toLowerCase().includes(searchTerm) || sighting.type.toLowerCase().includes(searchTerm) || sighting.notes.toLowerCase().includes(searchTerm));
     resolve(searchResults);
   }).catch((error) => reject(error));
+});
+
+const numberOfSightings = (type) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/sightings.json?orderBy="type"&equalTo="${type}"`)
+    .then((response) => resolve(Object.keys(response.data).length)).catch((error) => reject(error));
 });
 
 export default {
@@ -76,4 +83,5 @@ export default {
   deleteSighting,
   deleteOutingSightings,
   searchSightings,
+  numberOfSightings,
 };
