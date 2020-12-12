@@ -20,7 +20,7 @@ class SingleOuting extends Component {
     const outingId = this.props.match.params.id;
     const { user } = this.props;
     if (user !== null) {
-      userData.getUser(user).then((response) => {
+      userData.getUser(user.uid).then((response) => {
         this.setState({ experience: response.experience });
       });
     }
@@ -38,7 +38,7 @@ class SingleOuting extends Component {
   getOutingInfo = (outingId) => {
     const { user } = this.props;
     if (user !== null) {
-      userData.getUser(user).then((response) => {
+      userData.getUser(user.uid).then((response) => {
         this.setState({ experience: response.experience });
       });
     }

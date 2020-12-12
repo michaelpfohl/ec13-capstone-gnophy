@@ -20,7 +20,7 @@ class App extends React.Component {
       if (user) {
         this.setState({ user });
         userData.setCurrentUser(user);
-        userData.getUser(user).then((response) => {
+        userData.getUser(user.uid).then((response) => {
           this.setState({ experience: response.experience });
         });
       } else {
@@ -36,6 +36,9 @@ class App extends React.Component {
   addExperience = (userId, experience) => {
     const newExperience = experience + 10;
     userData.addExperience(userId, newExperience);
+    userData.getUser(userId).then((response) => {
+      this.setState({ experience: response.experience });
+    });
   }
 
   render() {

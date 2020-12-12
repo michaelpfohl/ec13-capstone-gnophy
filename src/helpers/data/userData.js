@@ -40,7 +40,7 @@ const setCurrentUser = (userObj) => {
 };
 
 const getUser = (user) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${user.uid}"`).then((response) => {
+  axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${user}"`).then((response) => {
     resolve(Object.values(response.data)[0]);
   }).catch((error) => reject(error));
 });
@@ -49,10 +49,7 @@ const addExperience = (userId, value) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/users.json?orderBy="uid"&equalTo="${userId}"`).then((response) => {
     const userObj = Object.values(response.data)[0];
     axios.patch(`${baseUrl}/users/${userObj.firebaseKey}.json`,
-      { experience: value }).then(() => {
-      window.location.reload();
-      resolve();
-    }).catch((error) => reject(error));
+      { experience: value }).then(() => resolve).catch((error) => reject(error));
   });
 });
 
