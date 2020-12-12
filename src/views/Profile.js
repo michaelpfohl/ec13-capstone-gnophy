@@ -97,6 +97,7 @@ class Profile extends Component {
           </div>
           <div className="achievements-container">
             <h1 className="achievements-header">Achievements:</h1>
+            <hr/>
             <div className="d-flex justify-content-center flex-wrap">
               {showAchievements('outing', outings)}
               {showAchievements('sighting', sightings)}
