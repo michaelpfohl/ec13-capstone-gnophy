@@ -1,9 +1,29 @@
 .loader-container {
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 .spinner-grow {
   width: 10rem;
   height: 10rem;
   margin: 6rem;
+}
+
+.text-success {
+  background: $successHover;
+  background-image: $buttonTexture;
+}
+
+.text-warning {
+  background: #D4E09B;
+  background-image: $buttonTexture;
+}
+
+.text-danger {
+  background: $dangerHover;
+  background-image: $buttonTexture;
+}
+
+.text-info {
+  background: $blue;
+  background-image: $buttonTexture;
 }

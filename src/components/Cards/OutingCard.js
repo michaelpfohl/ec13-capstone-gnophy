@@ -78,7 +78,7 @@ class OutingCard extends Component {
                 color='danger'
                 className="d-flex"
                 title={'Delete Outing'}
-                buttonLabel={<i class="fas fa-times-circle"></i>}
+                buttonLabel={<i class="fas fa-times-circle card-button-text"></i>}
               >
                 <p>
                   Are you sure you want to delete this outing and all of its

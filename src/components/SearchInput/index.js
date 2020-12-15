@@ -36,7 +36,7 @@ class SearchInput extends Component {
               value={this.state.text}
               onChange={this.handleChange}
               className="search-input"
-              placeholder="Search here!"
+              placeholder=" Search here!"
             />
             <button className="btn btn-success">Submit</button>
           </form>

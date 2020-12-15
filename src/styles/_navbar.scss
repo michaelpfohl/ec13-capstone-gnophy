@@ -1,7 +1,8 @@
-// @import 'variables';
-
 .main--navbar {
   background-color: $navBackground;
+  background-image: $contentBackground;
+  -webkit-box-shadow: 0px 0px 15px .5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 15px .5px rgba(0, 0, 0, 0.7);
 }
 
 .nav--header {
@@ -11,5 +12,13 @@
 
 .nav--links {
   margin: auto 30px;
-  color: $navText;
+  color: $text;
+}
+
+.nav--header:hover {
+  color: $onText;
+}
+
+.nav--links:hover {
+  color: $onText;
 }
