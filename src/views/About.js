@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
+import Loader from '../components/Loader';
 
 class About extends Component {
+  state = { loading: true }
+
+  componentDidMount() {
+    this.setLoading();
+  }
+
+  setLoading = () => {
+    this.timer = setInterval(() => {
+      this.setState({ loading: false });
+    }, 1000);
+  }
+
   render() {
+    const { loading } = this.state;
     return (
+      <>
+      { loading ? (
+        <Loader />
+      ) : (
       <div className="d-flex justify-content-center">
       <div className="about-container">
         <h1 className="about-header">About Gnophy</h1>
@@ -26,6 +44,8 @@ class About extends Component {
         </ul>
       </div>
       </div>
+      )}
+      </>
     );
   }
 }

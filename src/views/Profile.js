@@ -4,6 +4,7 @@ import outingsData from '../helpers/data/outingsData';
 import achievementsData from '../helpers/data/achievementsData';
 
 import Achievement from '../components/Achievement';
+import Loader from '../components/Loader';
 
 class Profile extends Component {
   state = {
@@ -12,6 +13,7 @@ class Profile extends Component {
     fauna: 0,
     flora: 0,
     fungi: 0,
+    loading: true,
   };
 
   componentDidMount() {
@@ -30,15 +32,21 @@ class Profile extends Component {
         this.setState({ flora: response });
       });
       sightingsData.numberOfSightings('Fungi').then((response) => {
-        this.setState({ fungi: response });
+        this.setState({ fungi: response }, this.setLoading());
       });
     }
+  }
+
+  setLoading = () => {
+    this.timer = setInterval(() => {
+      this.setState({ loading: false });
+    }, 1000);
   }
 
   render() {
     const { user, experience } = this.props;
     const {
-      outings, sightings, flora, fauna, fungi,
+      outings, sightings, flora, fauna, fungi, loading,
     } = this.state;
     const achievements = achievementsData.getAchievements();
     const level = Math.floor(experience / 100);
@@ -61,6 +69,10 @@ class Profile extends Component {
     };
 
     return (
+      <>
+      { loading ? (
+          <Loader />
+      ) : (
       <div className="d-flex justify-content-center">
         <div className="profile-container">
           <div className="d-flex">
@@ -108,6 +120,8 @@ class Profile extends Component {
           </div>
         </div>
       </div>
+      )}
+      </>
     );
   }
 }

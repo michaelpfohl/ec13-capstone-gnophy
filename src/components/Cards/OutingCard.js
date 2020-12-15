@@ -8,11 +8,39 @@ import {
   Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+import sightingsData from '../../helpers/data/sightingsData';
 import AppModal from '../AppModal';
 
 class OutingCard extends Component {
+  state = {
+    sightings: [],
+  }
+
+  componentDidMount() {
+    const { outing } = this.props;
+    sightingsData.getOutingSightings(outing.firebaseKey).then((response) => {
+      this.setState({ sightings: response });
+    });
+  }
+
   render() {
     const { outing, removeOuting } = this.props;
+    const { sightings } = this.state;
+    const showTypeIcons = () => {
+      const typeIcons = [];
+      if (sightings.filter((sighting) => sighting.type === 'Fauna').length) {
+        typeIcons.push(<button>Fauna</button>);
+      }
+      if (sightings.filter((sighting) => sighting.type === 'Flora').length) {
+        typeIcons.push(<button>Flora</button>);
+      }
+      if (sightings.filter((sighting) => sighting.type === 'Fungi').length) {
+        typeIcons.push(<button>Fungi</button>);
+      }
+      return typeIcons;
+    };
+
     return (
       <div>
         <Card className="outing-card">
@@ -56,6 +84,7 @@ class OutingCard extends Component {
                 </Button>
               </AppModal>
             </div>
+            {showTypeIcons()}
           </CardBody>
         </Card>
       </div>
