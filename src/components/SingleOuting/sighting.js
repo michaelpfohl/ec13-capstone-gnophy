@@ -53,7 +53,7 @@ class SightingList extends Component {
                   Location: {sighting.location}
                 </div>
                 <div className="sl-subheader">Biome: {sighting.biome}</div>
-                <div className="sl-subheader">Sighting: {sighting.type}</div>
+                <div className="sl-subheader">Type: {sighting.type}</div>
               </div>
             </div>
           </div>

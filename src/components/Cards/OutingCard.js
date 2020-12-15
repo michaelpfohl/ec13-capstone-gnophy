@@ -12,6 +12,10 @@ import { Link } from 'react-router-dom';
 import sightingsData from '../../helpers/data/sightingsData';
 import AppModal from '../AppModal';
 
+import deerIcon from '../../assets/images/nounDeerIcon.png';
+import branchIcon from '../../assets/images/nounBranchIcon.png';
+import mushroomIcon from '../../assets/images/nounMushroomIcon.png';
+
 class OutingCard extends Component {
   state = {
     sightings: [],
@@ -30,13 +34,13 @@ class OutingCard extends Component {
     const showTypeIcons = () => {
       const typeIcons = [];
       if (sightings.filter((sighting) => sighting.type === 'Fauna').length) {
-        typeIcons.push(<button>Fauna</button>);
+        typeIcons.push(<img className="type-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/>);
       }
       if (sightings.filter((sighting) => sighting.type === 'Flora').length) {
-        typeIcons.push(<button>Flora</button>);
+        typeIcons.push(<img className="type-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/>);
       }
       if (sightings.filter((sighting) => sighting.type === 'Fungi').length) {
-        typeIcons.push(<button>Fungi</button>);
+        typeIcons.push(<img className="type-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/>);
       }
       return typeIcons;
     };
@@ -44,19 +48,24 @@ class OutingCard extends Component {
     return (
       <div>
         <Card className="outing-card">
-          <CardImg
-            top
-            width="100%"
-            src={outing.imageUrl}
-            alt="Card image cap"
-          />
+          <div className="outing-image-container">
+            <div className="icon-container">
+              {showTypeIcons()}
+            </div>
+            <CardImg
+              className="outing-image"
+              top
+              width="100%"
+              src={outing.imageUrl}
+              alt="Card image cap"
+            />
+          </div>
           <CardBody>
             <CardTitle tag="h5" className="card-title">
               {outing.name}
             </CardTitle>
-            <CardText className="card-location">{outing.location}</CardText>
-            <CardText className="card-biome">{outing.biome}</CardText>
-            <div className="d-flex justify-content-around">
+            <CardText className="card-location">{outing.location} · {outing.biome}</CardText>
+            <div className="d-flex justify-content-around outing-button-container">
               <Button className="card-button card-button-success">
                 <Link
                   to={`/outings/${outing.firebaseKey}`}
@@ -67,7 +76,7 @@ class OutingCard extends Component {
               </Button>
               <AppModal
                 color='danger'
-                className="delete-modal d-flex"
+                className="d-flex"
                 title={'Delete Outing'}
                 buttonLabel={<i class="fas fa-times-circle"></i>}
               >
@@ -84,7 +93,6 @@ class OutingCard extends Component {
                 </Button>
               </AppModal>
             </div>
-            {showTypeIcons()}
           </CardBody>
         </Card>
       </div>
