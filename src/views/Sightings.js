@@ -7,6 +7,11 @@ import SightingCard from '../components/Cards/SightingCard';
 import SearchInput from '../components/SearchInput';
 import Loader from '../components/Loader';
 
+import deerIcon from '../assets/images/nounDeerIcon.png';
+import branchIcon from '../assets/images/nounBranchIcon.png';
+import mushroomIcon from '../assets/images/nounMushroomIcon.png';
+import refreshIcon from '../assets/images/nounRefreshIcon.png';
+
 class Sightings extends Component {
   state = {
     sightings: [],
@@ -66,10 +71,10 @@ class Sightings extends Component {
         <SearchInput type="sighting"/>
         <div className="d-flex justify-content-center">
           <div className="filter-buttons d-flex justify-content-around">
-            <button className="btn btn-success" id="Flora" onClick={this.filterByType}>Flora</button>
-            <button className="btn btn-success" id="Fauna" onClick={this.filterByType}>Fauna</button>
-            <button className="btn btn-success" id="Fungi" onClick={this.filterByType}>Fungi</button>
-            <button className="btn btn-success" id="All" onClick={this.filterByType}>All</button>
+            <button className="btn btn-success" id="Fauna" onClick={this.filterByType}><img className="type-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/></button>
+            <button className="btn btn-success" id="Flora" onClick={this.filterByType}><img className="type-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/></button>
+            <button className="btn btn-success" id="Fungi" onClick={this.filterByType}><img className="type-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/></button>
+            <button className="btn btn-success" id="All" onClick={this.filterByType}><img className="type-icon" alt="Refresh by Free Icons from the Noun Project" src={refreshIcon}/></button>
           </div>
         </div>
         <div className="d-flex flex-wrap justify-content-center">

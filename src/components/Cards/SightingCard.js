@@ -10,9 +10,24 @@ import {
 import { Link } from 'react-router-dom';
 import AppModal from '../AppModal';
 
+import deerIcon from '../../assets/images/nounDeerIcon.png';
+import branchIcon from '../../assets/images/nounBranchIcon.png';
+import mushroomIcon from '../../assets/images/nounMushroomIcon.png';
+
 class SightingCard extends Component {
   render() {
     const { sighting, removeSighting } = this.props;
+    const showTypeIcon = () => {
+      let icon = '';
+      if (sighting.type === 'Fauna') {
+        icon = <img className="type-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/>;
+      } else if (sighting.type === 'Flora') {
+        icon = <img className="type-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/>;
+      } else if (sighting.type === 'Fungi') {
+        icon = <img className="type-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/>;
+      }
+      return icon;
+    };
     return (
       <div>
         <Card className="sighting-card">
@@ -26,9 +41,7 @@ class SightingCard extends Component {
             <CardTitle tag="h5" className="card-title">
               {sighting.name}
             </CardTitle>
-            <CardText className="card-location">{sighting.location}</CardText>
-            <CardText className="card-biome">{sighting.biome}</CardText>
-            <CardText className="card-type">{sighting.type}</CardText>
+            <CardText className="card-location">{sighting.location} · {sighting.biome} · {sighting.type}</CardText>
             <div className="d-flex justify-content-around">
               <Button className="card-button card-button-success">
                 <Link
@@ -38,6 +51,7 @@ class SightingCard extends Component {
                   <i class="fas fa-eye"></i>
                 </Link>
               </Button>
+              {showTypeIcon()}
               <AppModal
                 color="danger"
                 className="delete-modal d-flex"
