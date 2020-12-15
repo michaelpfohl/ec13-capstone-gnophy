@@ -1,9 +1,12 @@
 .about-container {
   width: 90%;
-  margin-top: 2.5%;
-  background: #ffff7d;
+  margin: 2.5% 0;
+  background: $navBackground;
+  background-image: $contentBackground;
   border-radius: 10px;
-  padding: 2.5%
+  padding: 2.5%;
+  color: $text;
+  border: 3px solid $text;
 }
 
 .about-header {

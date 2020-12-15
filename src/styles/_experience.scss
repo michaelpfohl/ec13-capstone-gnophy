@@ -6,16 +6,23 @@
 
 .experience-container {
   width: 100%;
+  background: $text;
+  background-image: $backgroundTexture;
+  border: 2px solid $onText;
+}
+
+.bg-success {
+  background-color: $success !important;
 }
 
 .level-spacer {
   margin: 0 20px;
-  color:#ffff7d;
+  color: $text;
   font-size: 2rem;
 }
 
 .level-header {
-  color: #ffff7d;
+  color: $text;
   font-size: 1rem;
   letter-spacing: 1.2px;
 }

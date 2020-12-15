@@ -1,6 +1,9 @@
 .so-container {
   padding: 20px;
-  background: #ffff7d;
+  background: $navBackground;
+  background-image: $contentBackground;
+  color: $text;
+  border: 3px solid $text;
   border-radius: 10px;
   width: 80%;
   margin: 50px 0px;
@@ -12,8 +15,11 @@
 
 .so-sightings-container {
   margin: 50px 10%;
-  background: #ffff7d;
+  background: $navBackground;
+  background-image: $contentBackground;
   border-radius: 10px;
+  color: $text;
+  border: 3px solid $text;
 }
 
 .sl-container {
@@ -62,7 +68,7 @@
 
 .no-sightings {
   margin: 50px 0px;
-  color: $navBackground;
+  color: $text;
 }
 
 .no-sightings-header {
@@ -76,6 +82,6 @@
 hr {
   height: 3px;
   width: 95%;
-  background: $navBackground;
+  background: $text;;
   border-radius: 10px;
 }

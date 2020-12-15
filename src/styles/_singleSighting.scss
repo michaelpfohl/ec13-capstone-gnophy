@@ -1,10 +1,13 @@
 .ss-container {
   margin: 50px;
-  background-color: #ffff7d;
+  background-color: $navBackground;
+  background-image: $contentBackground;
   border-radius: 10px;
   align-items: center;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+  color: $text;
+  border: 3px solid $text;
 }
 
 .ss-image {

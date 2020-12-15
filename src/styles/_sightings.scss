@@ -1,5 +1,4 @@
 .filter-buttons {
-  margin-top: 50px;
   width: 60%;
 }
 
@@ -7,6 +6,13 @@
   border-radius: 100px;
   padding: 20px;
   margin: 0px 105px;
+  background: $success;
+  background-image: $buttonTexture;
+  border: none;
+}
+.filter-buttons button:hover {
+  background: $successHover;
+  background-image: $buttonTexture;
 }
 
 .filter-buttons button img {

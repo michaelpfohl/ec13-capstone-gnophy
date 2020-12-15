@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import googleImage from './Sign-in-with-Google.png';
+import googleLogo from '../../assets/images/googleLogo.png';
 
 class Auth extends Component {
   state = {};
@@ -18,8 +18,8 @@ class Auth extends Component {
         <div className="auth-container">
           <h1 className="auth-header">Hello and welcome to Gnophy!</h1>
           <h3 className="auth-subheader">Please sign in in order to use the app.</h3>
-          <button className="btn btn-secondary" onClick={this.loginClickEvent}>
-            <img src={googleImage} alt="Google Sign In Button"></img>
+          <button className="btn btn-secondary google-logo" onClick={this.loginClickEvent}>
+            <img src={googleLogo} alt="Google Sign In Button"></img>
           </button>
         </div>
       </div>
