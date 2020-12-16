@@ -16,11 +16,12 @@
 @import 'singleSighting';
 @import 'searchContainer';
 @import 'experience';
+@import 'notFound';
+@import 'footer';
 
 body {
   background-color: $background;
   background-image: $backgroundTexture;
-  
   font-family: 'Futura';
 }
 
@@ -30,5 +31,5 @@ body {
 }
 
 ::placeholder {
-  color: $onText;
+  color: $success;
 }

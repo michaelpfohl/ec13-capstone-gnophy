@@ -113,12 +113,12 @@ class SingleOuting extends Component {
               title={'Delete Outing'}
               buttonLabel={'Delete Outing'}
             >
-              <p>
+              <p className="delete-text">
                 Are you sure you want to delete this outing and all of its
                 sightings?
               </p>
               <button
-                className="card-button card-button-danger"
+                className="card-button btn-danger"
                 id={outing.firebaseKey}
                 onClick={(e) => this.removeOuting(e)}
               >

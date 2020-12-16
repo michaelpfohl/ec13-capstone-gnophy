@@ -1,0 +1,15 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  color: $navBackground;
+  margin-bottom: 25px;
+}
+
+.footer-item {
+  color: $success;
+  margin: 0 5px;
+}
+
+.footer-item:hover {
+  color: $successHover;
+}

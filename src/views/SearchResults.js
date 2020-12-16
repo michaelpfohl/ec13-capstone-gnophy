@@ -63,8 +63,7 @@ class SearchResults extends Component {
 
     return (
       <>
-        <h1>Search Results</h1>
-        <button className="btn btn-success" onClick={this.goBack}>Search Again</button>
+        <button className="btn btn-success search-again-button" onClick={this.goBack}>Search Again</button>
         <div className='board-container d-flex flex-wrap justify-content-center'>
           {showResults()}
         </div>

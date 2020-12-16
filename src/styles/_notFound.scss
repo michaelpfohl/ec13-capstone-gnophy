@@ -1,25 +1,22 @@
-.home-container {
-  margin: 50px 0px 60px 0px;
+.not-found-container {
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
   background: $navBackground;
   background-image: $contentBackground;
-  color: $text;
+  margin: 10%;
+  padding: 5%;
   border-radius: 20px;
   border: 3px solid $text;
+  color: $text;
 }
 
-.home-header {
-  font-size: 4rem;
-  margin-top: 25px;
+.not-found-header {
+  font-size: 5rem;
 }
 
-.home-logo {
-  width: 80%;
-  height: 80%;
-}
-
-.start-button {
+.not-found-button {
   display: block;
-  margin-bottom: 25px;
+  margin-top: 25px;
   font-size: 2rem;
   padding: 2.5%;
   background: $success;
@@ -29,7 +26,7 @@
   color: $text;
 }
 
-.start-button:hover {
+.not-found-button:hover {
   background: $successHover;
   background-image: $buttonTexture;
 }

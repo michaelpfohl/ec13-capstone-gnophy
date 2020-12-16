@@ -1,0 +1,44 @@
+.modal-body {
+  background: $navBackground;
+  background-image: $contentBackground;
+  border: 1px solid $text;
+  border-top: none;
+  border-bottom: none;
+}
+
+.modal-header {
+  background: $navBackground;
+  background-image: $contentBackground;
+  border: 1px solid $text;
+  border-bottom: none;
+  color: $text;
+}
+
+.modal-footer {
+  background: $navBackground;
+  background-image: $contentBackground;
+  border: 1px solid $text;
+  border-top: none;
+}
+
+.modal-input {
+  background: $text;
+  background-image: $backgroundTexture;
+}
+
+.modal-input:focus {
+  background: $text;
+  background-image: $backgroundTexture;
+}
+
+.choose-image {
+  color: $text;
+}
+
+.cancel-button {
+  margin-right: 23px;
+}
+
+.delete-text {
+  color: $text;
+}

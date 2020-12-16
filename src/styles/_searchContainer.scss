@@ -17,4 +17,10 @@
   background: $text;
   background-image: $backgroundTexture;
   color: $onText;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-again-button {
+  margin-top: 50px;
 }

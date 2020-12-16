@@ -69,7 +69,7 @@ class SightingForm extends Component {
             value={this.state.name}
             onChange={this.handleChange}
             placeholder="Name"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
@@ -78,7 +78,7 @@ class SightingForm extends Component {
             value={this.state.location}
             onChange={this.handleChange}
             placeholder="Location"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
@@ -87,11 +87,11 @@ class SightingForm extends Component {
             value={this.state.biome}
             onChange={this.handleChange}
             placeholder="Biome"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <select
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             name="type"
             value={this.state.type}
             onChange={this.handleChange}
@@ -108,7 +108,7 @@ class SightingForm extends Component {
             value={this.state.notes}
             onChange={this.handleChange}
             placeholder="Notes"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
           />
           <input
             type="url"
@@ -116,11 +116,11 @@ class SightingForm extends Component {
             value={this.state.imageUrl}
             onChange={this.handleChange}
             placeholder="Enter an Image URL or Upload a File"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
-            className="m-2"
+            className="m-2 choose-input"
             type="file"
             id="myFile"
             name="filename"

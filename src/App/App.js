@@ -8,6 +8,7 @@ import userData from '../helpers/data/userData';
 
 import MainNavbar from '../components/Navbar';
 import Routes from '../helpers/Routes';
+import Footer from '../components/Footer';
 
 fbConnection();
 class App extends React.Component {
@@ -54,6 +55,7 @@ class App extends React.Component {
             </>
           )}
           <Routes user={user} experience={experience} addExperience={this.addExperience}/>
+          <Footer/>
         </Router>
       </div>
     );

@@ -12,6 +12,7 @@ import {
   NavbarText,
 } from 'reactstrap';
 
+import logo from '../../assets/images/nounNatureIcon.png';
 import Experience from '../Experience';
 
 const MainNavbar = (props) => {
@@ -30,7 +31,10 @@ const MainNavbar = (props) => {
   return (
     <div>
       <Navbar className="main--navbar" expand="md">
-        <NavbarBrand className="nav--header" href="/">Gnophy</NavbarBrand>
+      <NavbarBrand href="/" className="d-flex">
+        <img className="main-logo" src={logo} alt="nature by Creative Mania from the Noun Project"/>
+        <div className="nav--header">Gnophy</div>
+      </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>

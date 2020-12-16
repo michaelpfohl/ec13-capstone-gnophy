@@ -71,10 +71,10 @@ class Sightings extends Component {
         <SearchInput type="sighting"/>
         <div className="d-flex justify-content-center">
           <div className="filter-buttons d-flex justify-content-around">
-            <button className="btn btn-success" id="Fauna" onClick={this.filterByType}><img className="type-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/></button>
-            <button className="btn btn-success" id="Flora" onClick={this.filterByType}><img className="type-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/></button>
-            <button className="btn btn-success" id="Fungi" onClick={this.filterByType}><img className="type-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/></button>
-            <button className="btn btn-success" id="All" onClick={this.filterByType}><img className="type-icon" alt="Refresh by Free Icons from the Noun Project" src={refreshIcon}/></button>
+            <button className="btn btn-success" id="Fauna" onClick={this.filterByType}><img className="filter-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/></button>
+            <button className="btn btn-success" id="Flora" onClick={this.filterByType}><img className="filter-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/></button>
+            <button className="btn btn-success" id="Fungi" onClick={this.filterByType}><img className="filter-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/></button>
+            <button className="btn btn-success" id="All" onClick={this.filterByType}><img className="filter-icon" alt="Refresh by Free Icons from the Noun Project" src={refreshIcon}/></button>
           </div>
         </div>
         <div className="d-flex flex-wrap justify-content-center">

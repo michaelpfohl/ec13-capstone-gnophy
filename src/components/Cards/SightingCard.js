@@ -20,11 +20,11 @@ class SightingCard extends Component {
     const showTypeIcon = () => {
       let icon = '';
       if (sighting.type === 'Fauna') {
-        icon = <img className="type-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/>;
+        icon = <img className="sighting-icon" alt="Deer by priyanka from the Noun Project" src={deerIcon}/>;
       } else if (sighting.type === 'Flora') {
-        icon = <img className="type-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/>;
+        icon = <img className="sighting-icon" alt="Branch by tezar tantular from the Noun Project" src={branchIcon}/>;
       } else if (sighting.type === 'Fungi') {
-        icon = <img className="type-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/>;
+        icon = <img className="sighting-icon" alt="Mushroom by tezar tantular from the Noun Project" src={mushroomIcon}/>;
       }
       return icon;
     };
@@ -32,6 +32,7 @@ class SightingCard extends Component {
       <div>
         <Card className="sighting-card">
           <CardImg
+            className="sighting-card-image"
             top
             width="100%"
             src={sighting.imageUrl}
@@ -58,11 +59,11 @@ class SightingCard extends Component {
                 title={'Delete Sighting'}
                 buttonLabel={<i class="fas fa-times-circle"></i>}
               >
-                <p>
+                <p className="delete-text">
                   Are you sure you want to delete this sighting?
                 </p>
                 <Button
-                  className="card-button card-button-danger"
+                  className="card-button btn-danger"
                   id={sighting.firebaseKey}
                   onClick={(e) => removeSighting(e)}
                 >
