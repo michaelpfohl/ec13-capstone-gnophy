@@ -80,12 +80,12 @@ class OutingCard extends Component {
                 title={'Delete Outing'}
                 buttonLabel={<i class="fas fa-times-circle card-button-text"></i>}
               >
-                <p>
+                <p className="delete-text">
                   Are you sure you want to delete this outing and all of its
                   sightings?
                 </p>
                 <Button
-                  className="card-button card-button-danger"
+                  className="card-button btn-danger"
                   id={outing.firebaseKey}
                   onClick={(e) => removeOuting(e)}
                 >

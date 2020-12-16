@@ -36,9 +36,9 @@ class SightingList extends Component {
                   title={'Delete Sighting'}
                   buttonLabel={<i class="fas fa-times-circle"></i>}
                 >
-                  <p>Are you sure you want to delete this sighting?</p>
+                  <p className="delete-text">Are you sure you want to delete this sighting?</p>
                   <Button
-                    className="card-button card-button-danger"
+                    className="card-button btn-danger"
                     id={sighting.firebaseKey}
                     onClick={(e) => removeSighting(e)}
                   >

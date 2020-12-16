@@ -5,7 +5,7 @@ import {
 
 const AppModal = (props) => {
   const {
-    buttonLabel, className, title, color,
+    buttonLabel, title, color,
   } = props;
 
   const [modal, setModal] = useState(false);
@@ -17,13 +17,13 @@ const AppModal = (props) => {
       <Button color={color} onClick={toggle} className="modal-button">
         {buttonLabel}
       </Button>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>{title}</ModalHeader>
-        <ModalBody>
+      <Modal isOpen={modal} toggle={toggle} className="d-flex">
+        <ModalHeader toggle={toggle} className="modal-header" charCode="">{title}</ModalHeader>
+        <ModalBody className="modal-body">
           {props.children}
         </ModalBody>
-        <ModalFooter>
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        <ModalFooter className="modal-footer">
+          <Button className="btn-danger cancel-button" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>

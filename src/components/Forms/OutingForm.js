@@ -61,7 +61,7 @@ class OutingForm extends Component {
             value={this.state.name}
             onChange={this.handleChange}
             placeholder="Outing Name"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
@@ -70,7 +70,7 @@ class OutingForm extends Component {
             value={this.state.location}
             onChange={this.handleChange}
             placeholder="Outing Location"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
@@ -79,7 +79,7 @@ class OutingForm extends Component {
             value={this.state.biome}
             onChange={this.handleChange}
             placeholder="Outing Biome"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
@@ -88,11 +88,11 @@ class OutingForm extends Component {
             value={this.state.imageUrl}
             onChange={this.handleChange}
             placeholder="Enter an Image URL or Upload a File"
-            className="form-control form-control-lg m-1"
+            className="form-control form-control-lg m-2 modal-input"
             required
           />
           <input
-            className="m-2"
+            className="m-2 choose-image"
             type="file"
             id="myFile"
             name="filename"

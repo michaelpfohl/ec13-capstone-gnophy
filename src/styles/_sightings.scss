@@ -5,14 +5,22 @@
 .filter-buttons button {
   border-radius: 100px;
   padding: 20px;
-  margin: 0px 105px;
+  margin: 0px 9.7%;
   background: $success;
   background-image: $buttonTexture;
   border: none;
 }
+
+.filter-icon {
+  margin: 2px 10px;
+  width: 50px;
+  padding: 0px;
+}
+
 .filter-buttons button:hover {
   background: $successHover;
   background-image: $buttonTexture;
+  border: 2px solid $text;
 }
 
 .filter-buttons button img {
