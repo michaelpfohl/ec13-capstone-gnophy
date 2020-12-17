@@ -96,7 +96,7 @@ class About extends Component {
                       alt="Branch by tezar tantular from the Noun Project"
                       src={branchIcon}
                     />
-                    <h1>Fauna</h1>
+                    <h1>Flora</h1>
                     <p>
                       The plants of a particular region, habitat, or geological
                       period.

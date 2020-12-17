@@ -62,7 +62,7 @@ class SingleSighting extends Component {
               title={'Delete Outing'}
               buttonLabel={<i class="fas fa-times-circle"></i>}
             >
-              <p>Are you sure you want to delete this sighting?</p>
+              <p className="delete-text">Are you sure you want to delete this sighting?</p>
               <button
                 className="card-button card-button-danger"
                 id={sighting.firebaseKey}
