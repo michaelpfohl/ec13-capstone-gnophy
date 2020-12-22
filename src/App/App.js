@@ -51,7 +51,7 @@ class App extends React.Component {
         <Router>
           {user && (
             <>
-            <MainNavbar user={user} experience={experience}/>
+            <MainNavbar user={user} experience={experience} />
             </>
           )}
           <Routes user={user} experience={experience} addExperience={this.addExperience}/>
