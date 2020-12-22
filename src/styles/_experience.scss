@@ -26,3 +26,9 @@
   font-size: 1rem;
   letter-spacing: 1.2px;
 }
+
+@media only screen and (max-width: 700px) {
+  .level-container {
+    margin: auto;
+  }
+}
