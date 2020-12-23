@@ -30,3 +30,9 @@
   background: $successHover;
   background-image: $buttonTexture;
 }
+
+@media only screen and (max-width: 772px) {
+  .not-found-button {
+    font-size: 1.5rem;
+  }
+}

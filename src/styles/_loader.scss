@@ -1,5 +1,5 @@
 .loader-container {
-  margin: 250px 0px 100px 0px;
+  margin: 10% 0px 6% 0px;
 }
 
 .spinner-grow {
@@ -14,7 +14,7 @@
 }
 
 .text-warning {
-  background: #D4E09B;
+  background: #d4e09b;
   background-image: $buttonTexture;
 }
 
@@ -26,4 +26,36 @@
 .text-info {
   background: $blue;
   background-image: $buttonTexture;
+}
+
+@media only screen and (max-width: 1468px) {
+  .spinner-grow {
+    width: 8rem;
+    height: 8rem;
+    margin: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  .spinner-grow {
+    width: 6rem;
+    height: 6rem;
+    margin: 4rem;
+  }
+}
+
+@media only screen and (max-width: 904px) {
+  .spinner-grow {
+    width: 10rem;
+    height: 10rem;
+    margin: 6rem;
+  }
+}
+
+@media only screen and (max-width: 704px) {
+  .spinner-grow {
+    width: 7rem;
+    height: 7rem;
+    margin: 4rem;
+  }
 }
