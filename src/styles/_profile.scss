@@ -44,7 +44,7 @@
 }
 
 .stat-container h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .achievement-medal {
@@ -74,4 +74,141 @@
 
 .profile-hr {
   background: $text;
+}
+
+@media only screen and (max-width: 1600px) {
+  .profile-header {
+    font-size: 4rem;
+  }
+  .profile-image {
+    width: 400px;
+    height: 400px;
+  }
+  .stat-container {
+    margin: 40px;
+  }
+  .achievements-header {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .profile-header {
+    font-size: 3.5rem;
+  }
+  .profile-image {
+    width: 350px;
+    height: 350px;
+  }
+  .stat-container {
+    margin: 35px;
+  }
+  .achievements-header {
+    font-size: 3.5rem;
+  }
+  .stat-container h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .profile-header {
+    font-size: 3rem;
+  }
+  .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+  .stat-container {
+    margin: 30px;
+  }
+  .achievements-header {
+    font-size: 3rem;
+    margin-bottom: 0px;
+  }
+  .stat-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .profile-header {
+    font-size: 2.25rem;
+  }
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  .stat-container {
+    margin: 20px;
+  }
+  .achievements-header {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+  }
+  .stat-container h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .achievement-card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 12.5px;
+  }
+  .achievement-name {
+    margin-top: 5px;
+    font-size: .75rem;
+  }
+  .achievement-medal {
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 772px) {
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-header {
+    font-size: 1.9rem;
+    margin-bottom: 0;
+  }
+  .stat-container {
+    margin: 20px;
+  }
+  .stat-container h1 {
+    font-size: 1.15rem;
+  }
+  .achievements-header {
+    font-size: 1.9rem;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 664px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-header {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
+  .achievements-header {
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .profile-header {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+  .stat-container h1 {
+    font-size: 1rem;
+  }
 }
