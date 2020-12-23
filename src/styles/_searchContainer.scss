@@ -24,3 +24,21 @@
 .search-again-button {
   margin-top: 50px;
 }
+
+@media only screen and (max-width: 1615px) {
+  .search-input {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .search-input {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+  .search-input {
+    width: 60%;
+  }
+}
