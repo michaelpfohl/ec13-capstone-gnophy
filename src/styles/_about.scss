@@ -18,6 +18,7 @@
 .about-tagline {
   width: 90%;
   font-size: 1.8rem;
+  margin: auto;
   margin-bottom: 50px;
 }
 
@@ -73,4 +74,78 @@
 
 .term-icon {
   width: 300px;
+}
+
+
+@media only screen and (max-width: 1500px) {
+  .term-icon {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about-subheader {
+    font-size: 2.2rem;
+  }
+  .about-sub-p {
+    font-size: 1.2rem;
+  }
+  .term-icon {
+    width: 200px;
+  }
+  .about-header {
+    font-size: 3.25rem;
+  }
+  .about-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .terms-header {
+    margin-top: 30px;
+    font-size: 3.25rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .about-subheader {
+    font-size: 1.7rem;
+  }
+  .about-sub-p {
+    font-size: 1rem;
+  }
+  .about-header {
+    font-size: 2.75rem;
+  }
+  .about-tagline {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+  }
+  .terms-header {
+    font-size: 2.75rem;
+  }
+  .term-icon {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 772px) {
+  .about-subheader {
+    font-size: 1.4rem;
+  }
+  .about-sub-p {
+    font-size: .8rem;
+  }
+  .about-tagline {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .term-icon {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-subheader {
+    font-size: 1.1rem;
+  }
 }
