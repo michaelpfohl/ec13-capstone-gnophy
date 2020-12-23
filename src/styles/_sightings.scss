@@ -26,3 +26,21 @@
 .filter-buttons button img {
   pointer-events: none;
 }
+
+@media only screen and (max-width: 1220px) {
+  .filter-icon {
+    width: 40px;
+  }
+  .filter-buttons button {
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 772px) {
+  .filter-icon {
+    width: 30px;
+  }
+  .filter-buttons button {
+    padding: 10px;
+  }
+}
