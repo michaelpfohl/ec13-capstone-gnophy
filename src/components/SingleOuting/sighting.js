@@ -11,14 +11,14 @@ class SightingList extends Component {
       <div>
         <div className="sl-container">
           <div className="row">
-            <div className="col-3">
+            <div className="col-xl-3 col-lg-6">
               <img
                 className="sl-image"
                 src={sighting.imageUrl}
                 alt={sighting.name}
               />
             </div>
-            <div className="col-5 sl-center-container">
+            <div className="col-xl-5 col-lg-6 sl-center-container">
               <h1 className="sl-name">{sighting.name}</h1>
               <div className="d-flex justify-content-center sl-button-container">
                 <Button className="btn modal-button btn-success">

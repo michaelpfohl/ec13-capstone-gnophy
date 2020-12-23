@@ -88,7 +88,7 @@ class SingleOuting extends Component {
         <div className="d-flex justify-content-center">
           <div className="so-button-container d-flex justify-content-around">
             <AppModal
-              color="success"
+              color="success so-button"
               title={'Create Sighting'}
               buttonLabel={'Create Sighting'}
             >
@@ -101,14 +101,14 @@ class SingleOuting extends Component {
               />
             </AppModal>
             <AppModal
-              color="success"
+              color="success so-button"
               title={'Update Outing'}
               buttonLabel={'Update Outing'}
             >
               <OutingForm outing={outing} onUpdate={this.getOutingInfo} />
             </AppModal>
             <AppModal
-              color="danger"
+              color="danger so-button"
               className="delete-modal d-flex"
               title={'Delete Outing'}
               buttonLabel={'Delete Outing'}
