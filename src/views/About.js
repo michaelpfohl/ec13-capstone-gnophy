@@ -70,7 +70,7 @@ class About extends Component {
               </div>
 
               <h2 className="terms-header">Terms</h2>
-              <p className="about-sub-p">
+              <p className="about-tagline">
                 Throughout the application, there are some terms used that a kid
                 may be unfamiliar with. As such, we wanted to provide some
                 definitions here:
@@ -83,12 +83,12 @@ class About extends Component {
                       alt="Deer by priyanka from the Noun Project"
                       src={deerIcon}
                     />
-                    <h1>Fauna</h1>
-                    <p>
+                    <h1 className="about-subheader">Fauna</h1>
+                    <p className="about-sub-p">
                       The animals of a particular region, habitat, or geological
                       period.
                     </p>
-                    <p>Example: Deer, Fish, Birds</p>
+                    <p className="about-sub-p">Example: Deer, Fish, Birds</p>
                   </div>
                   <div className="term-card">
                     <img
@@ -96,12 +96,12 @@ class About extends Component {
                       alt="Branch by tezar tantular from the Noun Project"
                       src={branchIcon}
                     />
-                    <h1>Flora</h1>
-                    <p>
+                    <h1 className="about-subheader">Flora</h1>
+                    <p className="about-sub-p">
                       The plants of a particular region, habitat, or geological
                       period.
                     </p>
-                    <p>Example: Trees, Flowers, Vines</p>
+                    <p className="about-sub-p">Example: Trees, Flowers, Vines</p>
                   </div>
                   <div className="term-card">
                     <img
@@ -109,12 +109,12 @@ class About extends Component {
                       alt="Mushroom by tezar tantular from the Noun Project"
                       src={mushroomIcon}
                     />
-                    <h1>Fungi</h1>
-                    <p>
+                    <h1 className="about-subheader">Fungi</h1>
+                    <p className="about-sub-p">
                       Any of a group of spore-producing organisms feeding on
                       organic matter.
                     </p>
-                    <p>Example: Mushrooms, Molds, Toadstools</p>
+                    <p className="about-sub-p">Example: Mushrooms, Molds, Toadstools</p>
                   </div>
                 </div>
               </div>

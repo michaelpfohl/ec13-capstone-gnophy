@@ -33,3 +33,23 @@
   background: $successHover;
   background-image: $buttonTexture;
 }
+
+@media only screen and (max-width: 730px) {
+
+  .home-header {
+    font-size: 2.9rem;
+  }
+
+  .start-button {
+    font-size: 1.45rem;
+  }
+
+  .home-logo {
+    width: 50%;
+    height: 50%;
+  }
+
+  .home-container {
+    margin: 50px 20px 60px 20px;
+  }
+}

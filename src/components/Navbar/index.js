@@ -30,12 +30,12 @@ const MainNavbar = (props) => {
   const { user, experience } = props;
   return (
     <div>
-      <Navbar className="main--navbar" expand="md">
+      <Navbar className="main--navbar" expand="lg">
       <NavbarBrand href="/" className="d-flex">
         <img className="main-logo" src={logo} alt="nature by Creative Mania from the Noun Project"/>
         <div className="nav--header">Gnophy</div>
       </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={toggle}/>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
