@@ -93,4 +93,6 @@ const achievements = [
 
 const getAchievements = () => achievements;
 
-export default { getAchievements };
+const achievementsData = { getAchievements };
+
+export default achievementsData;

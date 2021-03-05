@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import getUser from '../helpers/data/authData';
+import authData from '../helpers/data/authData';
 import outingsData from '../helpers/data/outingsData';
 import sightingsData from '../helpers/data/sightingsData';
 
@@ -21,7 +21,7 @@ class Outings extends Component {
   }
 
   getOutings = () => {
-    const currentUser = getUser.getUid();
+    const currentUser = authData.getUid();
     outingsData.getOutings(currentUser).then((res) => {
       this.setState({
         outings: res,

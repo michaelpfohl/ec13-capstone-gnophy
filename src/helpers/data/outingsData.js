@@ -42,7 +42,7 @@ const searchOutings = (userId, searchTerm) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export default {
+const outingsData = {
   createOuting,
   getOutings,
   getSingleOuting,
@@ -50,3 +50,5 @@ export default {
   deleteOuting,
   searchOutings,
 };
+
+export default outingsData;

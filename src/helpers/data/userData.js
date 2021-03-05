@@ -53,4 +53,6 @@ const addExperience = (userId, value) => new Promise((resolve, reject) => {
   });
 });
 
-export default { setCurrentUser, addExperience, getUser };
+const userData = { setCurrentUser, addExperience, getUser };
+
+export default userData;

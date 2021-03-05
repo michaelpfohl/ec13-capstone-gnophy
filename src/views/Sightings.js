@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import getUser from '../helpers/data/authData';
+import authData from '../helpers/data/authData';
 import sightingsData from '../helpers/data/sightingsData';
 
 import SightingCard from '../components/Cards/SightingCard';
@@ -24,7 +24,7 @@ class Sightings extends Component {
   }
 
   getSightings = () => {
-    const userId = getUser.getUid();
+    const userId = authData.getUid();
     sightingsData.getUserSightings(userId).then((response) => {
       this.setState({ sightings: response, filteredSightings: response }, this.setLoading);
     });
