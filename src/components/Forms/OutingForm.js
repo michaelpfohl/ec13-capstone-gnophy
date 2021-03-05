@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/storage';
-import getUser from '../../helpers/data/authData';
+import authData from '../../helpers/data/authData';
 import outingsData from '../../helpers/data/outingsData';
 
 class OutingForm extends Component {
@@ -15,7 +15,7 @@ class OutingForm extends Component {
   };
 
   componentDidMount() {
-    const userId = getUser.getUid();
+    const userId = authData.getUid();
     this.setState({
       userId,
     });

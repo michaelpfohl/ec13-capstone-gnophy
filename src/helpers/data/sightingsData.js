@@ -73,7 +73,7 @@ const numberOfSightings = (type) => new Promise((resolve, reject) => {
     .then((response) => resolve(Object.keys(response.data).length)).catch((error) => reject(error));
 });
 
-export default {
+const sightingsData = {
   createSighting,
   getSightings,
   getUserSightings,
@@ -85,3 +85,5 @@ export default {
   searchSightings,
   numberOfSightings,
 };
+
+export default sightingsData;
