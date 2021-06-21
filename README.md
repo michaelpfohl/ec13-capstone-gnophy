@@ -8,6 +8,9 @@ The idea for this app came to me while I was out on one of my own daily walks ad
 
 What excited me about the prospect of building this app was that it allowed me to experiment in a user experience space with which I am unfamiliar, that of designing with children in mind. I enjoyed exploring, at least at a base level, the use of gamification to promote positive habits as I myself have seen the positive effects that such design tactics can have through my own use of two apps which lean heavily on the concept, Duolingo (learning new languages) and Noom (managing calorie consumption).
 
+## View Deployed Site
+[Gnophy](https://gnophy.netlify.app/)
+
 ## Planning
 - [Figma](https://www.figma.com/file/hWzcLhr02oMvVBbYAX6rwH/GNOPHY?node-id=0%3A1)
 - [LucidChart ERD](https://lucid.app/lucidchart/invitations/accept/1b3b35d2-821b-4843-9f39-c1be7ed772eb)
